@@ -1,0 +1,66 @@
+{% macro html5() -%}
+    <!DOCTYPE html>
+{%- endmacro %}
+
+{% macro link(href, text="") -%}
+    <a href="{{ href }}">{{ text }}</a>
+{%- endmacro %}
+
+{% macro mailto(email, name=none) -%}
+    {% if name %}
+        {{ link("mailto:" ~ email, name) }}
+    {% else %}
+        {{ link("mailto:" ~ email, email) }}
+    {% endif %}
+{%- endmacro %}
+
+{% macro stylesheet_link_tag() -%}
+    {% for link_ in varargs %}
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ url_for('static', filename=('stylesheets/' ~ link_)) }}"
+        >
+    {% endfor %}
+{%- endmacro %}
+
+{% macro stylesheet_link_tag_raw() -%}
+    {% for link_ in varargs %}
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="{{ link_ }}"
+        >
+    {% endfor %}
+{%- endmacro %}
+
+{% macro javascript_include_tag() -%}
+    {% for link_ in varargs %}
+        <script
+            type="text/javascript"
+            src="{{ url_for('static', filename=('javascripts/' ~ link_)) }}"
+        ></script>
+    {% endfor %}
+{%- endmacro %}
+
+{% macro image_tag(link_, alt_text=none) -%}
+    {% if alt_text %}
+        <img
+            src="{{ url_for('static', filename=('images/' ~ link_)) }}"
+            alt="{{ alt_text }}"
+        >
+    {% else %}
+        <img src="{{ url_for('static', filename=('images/' ~ link_)) }}">
+    {% endif %}
+{%- endmacro %}
+
+{% macro image_tag_raw(link_, alt_text=none) -%}
+    {% if alt_text %}
+        <img
+            src="{{ link_ }}"
+            alt="{{ alt_text }}"
+        >
+    {% else %}
+        <img src="{{ link_ }}">
+    {% endif %}
+{%- endmacro %}

@@ -1,0 +1,19 @@
+.container {
+    width: 1140px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.container_half {
+  width:480px;
+  margin-left:20px;
+  margin-right:20px;
+}
+
+.space_20 {
+    height:20px;
+}
+
+.clear {
+    clear:both;
+}

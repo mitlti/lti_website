@@ -1,0 +1,22 @@
+@import "base";
+
+#top_image {
+    @include top_image("about.jpg");
+}
+
+#content {
+    ul li, p, strong {
+        line-height: 1.4em;
+        font-size: 1.2em;
+        margin-top:15px;
+        margin-bottom:15px;
+    }
+
+    strong {
+        font-size: 20px;
+    }
+}
+
+.section {
+  padding-bottom:25px;
+}

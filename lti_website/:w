@@ -1,0 +1,76 @@
+@import "base";
+@import "buttons/buttons";
+
+#top_image {
+    @include top_image("group-image-large.jpg");
+}
+
+#content {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    padding-top: 0px;
+}
+
+#motto {
+    margin: {
+        top: 9px;
+        bottom: 28px;
+    }
+    font: {
+        family: $delicious_heavy;
+        size: 40px;
+    }
+    line-height: 43.2px;
+    text-align: center;
+}
+
+#questions {
+    width: 100%;
+// #questions {
+//     width: 710px;
+//     float: left;
+}
+
+#whatitis {
+    width: 1140px;
+    background-color: rgba(200, 20, 20, 1);
+}
+
+.question_info {
+    margin-bottom:56px;
+    clear:both;
+}
+
+.question {
+    text-transform:uppercase;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 32px;
+    width: 30%;
+    float: left;
+}
+
+.info {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+    width: 60%;
+}
+
+.txt {
+    // font-family: $delicious_bold;
+    font-size: 20px;
+    line-height: 26.5px;
+}
+
+$button_color: #7F2B17;
+.button {
+    @extend .button;
+    // font-family: $delicious_bold;
+    font-size: 20px;
+    margin-top: 10px;
+    float: right;
+    padding: 2px 29px;
+}

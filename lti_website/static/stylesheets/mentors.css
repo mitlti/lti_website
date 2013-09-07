@@ -1,0 +1,18 @@
+/*22.8571428571*/
+/* line 3, ../../sass/mentors.scss */
+.portrait {
+  margin-bottom: 22.85714px;
+  margin-right: 22.85714px;
+  float: left;
+  height: 100px;
+}
+
+/* line 10, ../../sass/mentors.scss */
+.portrait img {
+  opacity: 0.75;
+}
+
+/* line 14, ../../sass/mentors.scss */
+.portrait_row div:last-of-type {
+  margin-right: 0;
+}

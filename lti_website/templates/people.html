@@ -1,0 +1,27 @@
+{% import 'macros/html.html' as html %}
+
+{% extends 'base.html' %}
+
+{% block title -%}Leadership Training Institute{%- endblock %}
+
+{% block head %}
+    {{ super() }}
+    {{ html.stylesheet_link_tag('people.css')}}
+{% endblock head %}
+
+{% block content %}
+    {% for bio in bios %}
+        <div class="mentor">
+            <div class="mentor-bak"
+                    style="background: url('/static/images/mentors/{{ bio.athena }}.jpg');
+                    background-repeat:no-repeat;
+                    background-position:center;">
+                <div class="mentor-bio">
+                    <strong>{{bio.first ~ " " ~ bio.last}}</strong>
+                    {{ bio.bio }}
+                </div>
+            <!--style="background: url('http://dummyimage.com/150x150/eee/000000.png')"-->
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

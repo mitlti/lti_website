@@ -1,0 +1,98 @@
+@import "base";
+@import "arrow_box";
+
+#content {
+    width: 860px;
+}
+
+#top_image {
+    @include top_image("mentors.jpg", 0.5);
+}
+
+.mentor {
+    position: relative;
+    float: left;
+    padding: {
+        right: 15px;
+        bottom: 15px;
+    }
+    width: 150px;
+    height: 150px;
+
+    &:hover .mentor-bio {
+        display: block;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+        @include transition-delay(20ms);
+        @include transition-duration(100ms);
+    }
+}
+
+.mentor-bak {
+    position: relative;
+    flaot: left;
+    width: 150px;
+    height: 150px;
+}
+
+$mentor_bio_height: 300px;
+
+.mentor-bio {
+    display: block;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    @include transition-property(all);
+
+    font-size: 18px;
+    width: $mentor_bio_height;
+    z-index:9999;
+    position: absolute;
+    left: 150px / 2 - $mentor_bio_height / 2;
+    bottom: 150px;
+    padding: 5px;
+}
+
+//----------------------------------------
+// $arrow_border_color: rgba(0, 0, 0, 0);
+$arrow_border_color: rgb(51, 51, 51);
+$background_color: rgb(255, 255, 255);
+$arrow_size: 14px;
+$border_width: 4px;
+
+$border_size: round($arrow_size + $border_width * 1.41421356);
+
+// http://cssarrowplease.com/
+.mentor-bio {
+    background: $background_color;
+    border: $border_width solid $arrow_border_color;
+}
+
+.mentor-bio:after, .mentor-bio:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.mentor-bio:after {
+    border-color: rgba($background_color, 0);
+    border-top-color: $background_color;
+    border-width: $arrow_size;
+    left: 50%;
+    margin-left: -$arrow_size;
+}
+
+.mentor-bio:before {
+    border-color: rgba($arrow_border_color, 0);
+    border-top-color: $arrow_border_color;
+    border-width: $border_size;
+    left: 50%;
+    margin-left: -$border_size;
+}
+//----------------------------------------
+

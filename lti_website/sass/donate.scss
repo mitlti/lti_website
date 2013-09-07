@@ -1,0 +1,15 @@
+@import "base";
+
+#top_image {
+    @include top_image("about.jpg");
+}
+
+#content {
+    width: 600px;
+    p {
+    font-size: 1.4em;
+    line-height: 1.2;
+}
+    text-align: center;
+}
+

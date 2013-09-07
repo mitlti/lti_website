@@ -1,0 +1,69 @@
+{% import 'macros/html.html' as html %}
+
+{% macro question(question_text, answer, button_text, linked_page, id=none) -%}
+{% if id %}
+<div class="question_info" id="{{ id }}">
+{% else %}
+<div class="question_info">
+{% endif %}
+    <div class="question">
+        {{ question_text }}
+    </div>
+    <div class="info">
+        <div class="txt">
+            {{ answer }}
+        </div>
+        <a class="button button-rounded button-flat-index"
+           href="{{ url_for(linked_page) }}">{{ button_text }}</a>
+    </div>
+    <div class="clear"></div>
+</div>
+{%- endmacro %}
+
+{{ question(
+    'What is the Leadership Training Institute?',
+    '''
+    The Leadership Training Institute is a program for high school students
+    that helps develop leadership skills. Throughout our 12-week program, our
+    students implement what they learn as they work to create a sustainable
+    community service project.
+    ''',
+    'Learn More...',
+    'about',
+    'whatitis'
+) }}
+
+{{ question(
+    'Why LTI?',
+    '''
+    LTI is a community of high school and college students who want to better
+    themselves and the world around them. Through our pay-it-forward method,
+    and mentoring program, we achieve this goal one step at a time.
+    ''',
+    'Philosophy',
+    'about',
+) }}
+
+
+{{ question(
+    'Who are we looking for?',
+    '''
+    We want students who are interested in learning lifelong leadership skills
+    and making an impact on their community.  Our students come from varying
+    backgrounds of leadership experience and different genders, races, and
+    ethnicities.
+    ''',
+    'Apply',
+    'join'
+) }}
+
+{{ question(
+    'How can I join?',
+    '''
+    We are looking for MIT students who are interested in giving back by
+    helping high school students build confidence, critical thinking, and
+    leadership skills.
+    ''',
+    'Join',
+    'join'
+) }}

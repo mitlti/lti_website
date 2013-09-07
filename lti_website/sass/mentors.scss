@@ -1,0 +1,16 @@
+/*22.8571428571*/
+$portrait_space: 22.8571428571px;
+.portrait {
+    margin-bottom: $portrait_space;
+    margin-right: $portrait_space;
+    float: left;
+    height: 100px;
+}
+
+.portrait img {
+    opacity: 0.75;
+}
+
+.portrait_row div:last-of-type {
+    margin-right: 0;
+}

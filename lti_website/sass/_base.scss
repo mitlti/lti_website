@@ -1,0 +1,195 @@
+@import "compass/css3";
+@import "compass/css3/box-shadow";
+@import "compass/layout/sticky-footer";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+
+$museo_slab: "MuseoSlab-500";
+$delicious_bold: "Delicious_Bold";
+$delicious_heavy: "Delicious_Heavy";
+
+@include font-face($museo_slab, font-files("MuseoSlab-500.otf", opentype));
+@include font-face($delicious_bold, font-files("Delicious-Bold.otf", opentype));
+@include font-face($delicious_heavy, font-files("Delicious-Heavy.otf", opentype));
+
+$title_font: $delicious_heavy;
+$content_font: $delicious_bold;
+
+$font_family: proxima-nova, Arial, Helvetica, sans-serif;
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    font-family: $font_family;
+    font-size: 16px;
+}
+
+@mixin image-replace($image) {
+    height: image-height($image);
+    width: image-width($image);
+    margin: 0;
+    padding: 0;
+    @include background-image(image-url($image));
+    background-repeat: no-repeat;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin top_image($image, $height_scale: 0.7) {
+    height: image-height($image) * $height_scale;
+
+    @include background-image(image-url($image));
+    background: {
+        repeat: no-repeat;
+        size: cover;
+        position-x: 50%;
+        position-y: 32%;
+    }
+}
+
+#top_image {
+    width: 100%
+}
+
+html, body {
+    height:100%;
+    font-size: 1em;
+}
+
+body {
+  background-color: #F2F2F2;
+}
+
+
+/* TOP PART HEADER ETC. */
+
+$header_background_color: rgba(255, 255, 255, .96);
+$header_height: 100px;
+
+#header_background {
+    width: 100%;
+    height: $header_height;
+    background: $header_background_color;
+    @include single-box-shadow(rgba(255, 255, 255, 0.55), 0, 0, 0, 1px);
+}
+
+$header_width: 1140px;
+
+#header_content {
+    margin-left: auto;
+    margin-right: auto;
+    width: $header_width;
+    height: $header_height;
+    clear: both;
+}
+
+#logo {
+    @include image-replace("lti-logo.png");
+    float: left;
+}
+
+$logo_navbar_distance: 25px;
+$navbar_width: $header_width - image-width("lti-logo.png") - $logo_navbar_distance;
+
+#navbar {
+    float: left;
+    margin-left: $logo_navbar_distance;
+    width: $navbar_width;
+}
+
+.navbar_elem {
+    float: left;
+    margin-top: 57px;
+}
+
+$width_between: 58.3px;
+.navbar_elem_link {
+    width: 100%;
+    a {
+        height: 40px;
+        padding-left: $width_between / 2;
+        padding-right: $width_between / 2;
+        font-size: 1.2em;
+        line-height: 47px;
+        text-align: center;
+        text-decoration: none;
+        color: #8C2820;
+        &:hover { color: #C14242; }
+    }
+}
+
+
+#content {
+    width: 700px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:50px;
+}
+
+
+// Footer
+$footer_height: 130px;
+$footer_content_margin_top: 10px;
+$footer_background_color: rgb(40, 40, 40);
+$footer_text_color: rgb(150, 150, 150);
+
+#content {
+    margin-bottom: $footer_height;
+    padding-bottom: 20px;
+
+    h1 {
+        font-size: 3em;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 2em;
+        line-height: 1.2;
+    }
+}
+
+@include sticky-footer($footer_height, "#root", "#root-footer", "footer");
+
+#footer_wrapper {
+    width: 960px;
+    margin: auto;
+}
+
+footer {
+    background-color: $footer_background_color;
+}
+
+address, #mit-logo, #credits {
+    color: $footer_text_color;
+    font-size: 1em;
+    line-height: 1.2em;
+    a { color: rgb(150, 150, 150); }
+}
+
+address {
+    float: left;
+    margin-top: $footer_content_margin_top;
+}
+
+#mit-logo {
+    @include image-replace("mit-redgrey-header1.gif");
+    float: right;
+    margin-top: $footer_content_margin_top;
+}
+
+#credits {
+    clear: both;
+    text-align: center;
+    padding-top: 1em;
+}
+

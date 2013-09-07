@@ -1,0 +1,19 @@
+@import "base";
+
+#top_image {
+    @include top_image("about.jpg");
+}
+
+.question_answer {
+    margin-bottom: 25px;
+}
+
+.question {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.answer {
+    font-size: 18px;
+    line-height: 24px;
+}
