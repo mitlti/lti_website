@@ -1,0 +1,22 @@
+{% import 'macros.html' as html %}
+
+{% extends 'base.html' %}
+
+{% block title -%}Leadership Training Institute{%- endblock %}
+
+{% block head %}
+    {{ super() }}
+    {{ html.stylesheet_link_tag('donate.css')}}
+{% endblock head %}
+
+{% block content %}
+    <p>The Leadership Training Institute is fully funded by outside grants,
+        fellowships, and donations. Our funds go to developing mentor and
+        student leadership skills, funding final projects and subsidizing
+        travel expenses for students in need of financial support.  To support
+        our students’ desire to give back to the community, please donate
+        <a href="https://giving.mit.edu/givenow/add-designation.dyn?designationId=2721288">here</a>.</p>
+
+<br/>
+pictures from session + pictures from presentations (preferably smiles)
+{% endblock content %}

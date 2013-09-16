@@ -1,0 +1,15 @@
+{% import 'macros.html' as html %}
+
+{% extends 'base.html' %}
+
+{% block title -%}Leadership Training Institute{%- endblock %}
+
+{% block head %}
+    {{ super() }}
+    {{ html.stylesheet_link_tag('blog.css')}}
+{% endblock head %}
+
+{% block content %}
+    <script type='text/javascript' src='http://mitlti13.tumblr.com/js'></script>
+{% endblock content %}
+

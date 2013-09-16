@@ -1,0 +1,29 @@
+{% import 'macros.html' as html %}
+
+{% extends 'base.html' %}
+
+{% block title -%}Leadership Training Institute{%- endblock %}
+
+{% block head %}
+    {{ super() }}
+    {{ html.stylesheet_link_tag('about.css')}}
+{% endblock head %}
+
+{% block content %}
+    <div class="section" id="program">
+        {% include 'section_program.html' %}
+    </div>
+
+    <div class="section">
+        {% include 'section_lti_mentors.html' %}
+    </div>
+
+    <div class="section">
+        {% include 'section_unique_aspects.html' %}
+    </div>
+
+    <p>
+        <strong>Have a question and it’s not here? Find it on our FAQ page.
+            Still can’t find it? Email us at lti-directors@mit.edu</strong>
+    </p>
+{% endblock content %}

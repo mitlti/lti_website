@@ -1,0 +1,113 @@
+{% import 'macros.html' as html %}
+
+{% extends 'base.html' %}
+
+{% block title -%}Leadership Training Institute{%- endblock %}
+
+{% block head %}
+    {{ super() }}
+    {{ html.stylesheet_link_tag('faq.css')}}
+{% endblock head %}
+
+{% macro question_answer(question, answer) %}
+    <div class="question_answer">
+        <h2 class="question">{{ question }}</h2>
+        <p class="answer">{{ answer }}</p>
+    </div>
+{% endmacro %}
+
+
+{% block content %}
+
+{{ question_answer(
+    "When and where does LTI take place?",
+    """
+    LTI's Spring Session is a 12-week program that runs from early February to
+    May. Students will attend sessions on the MIT campus every Sunday
+    (excluding holidays and school vacations) from 1pm to 4pm.
+    """
+) }}
+
+{{ question_answer(
+    "What are the students' responsibilities?",
+    """
+    Students are expected to complete assignments on a weekly basis, in
+    addition to working on their Final Project throughout the session. During
+    the Closing Ceremony in May, students will present their project proposal
+    to an audience of family, friends, community leaders, and the LTI Board of
+    Directors.
+    """
+) }}
+
+{{ question_answer(
+    "How old does a student need to be to apply to LTI?",
+    """
+    LTI accepts students from ninth to twelve grade.
+    """
+) }}
+
+{{ question_answer(
+    'Do I need to live in Boston to attend LTI?',
+    """
+    As long as the student can commit to attending sessions on the MIT campus,
+    they can become a part of the program. We have had students who have lived
+    in the suburban areas around Boston attend our program, as well as a
+    student who drove all the way from Connecticut!
+    """
+) }}
+
+{{ question_answer(
+    "What are the requirements for applying?",
+    """
+    The only requirement is to fill out the application found here. However,
+    recommendation forms are strongly recommended and can also be found on the
+    application page. It has been shown that students who submit a
+    recommendation along with their application have a higher chance of getting
+    into the program.
+    """
+) }}
+
+{{ question_answer(
+    "What are the costs for the LTI program?",
+    """
+    Absolutely nothing! Each student receives a full scholarship for the
+    program and will receive an additional $150 of guaranteed funding upon
+    completion of the Final Project Proposal and approval from the Board of
+    Directors.
+    """
+) }}
+
+{{ question_answer(
+    "Is transportation subsidized?",
+    """
+    Students can apply for a transportation subsidy provided by LTI.
+    """
+) }}
+
+{{ question_answer(
+    "How can I get involved?",
+    """
+    Well, that depends! If you are a high school student, sign up to
+    participate in our Spring Session. If you are an MIT undergraduate, apply
+    to be a mentor or an Executive Board member. If you are neither of these,
+    stay in touch by joining our mailing list (email us at
+    lti-directors@mit.edu and support us by donating here.
+    """
+) }}
+
+{{ question_answer(
+    "How do I start up an LTI Chapter?",
+    """
+    We would love to see new chapters start in universities all over the world!
+    Contact us at lti-directors@mit.edu and we'll help you get started!
+    """
+) }}
+
+{{ question_answer(
+    "My question isn't here!",
+    """
+    No worries! Shoot us an email at lti-directors@mit.edu
+    """
+) }}
+
+{% endblock content %}
