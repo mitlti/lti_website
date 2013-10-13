@@ -1,0 +1,15 @@
+gem update --system
+gem install bundler
+bundle install
+
+./install.sh
+
+static
+  - css
+  - js
+  - images
+  - fonts
+dynamic
+  - templates -> flask executes templates at runtime
+compiled
+  - sass -> compiles to css in static

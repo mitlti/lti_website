@@ -13,7 +13,7 @@
     {% for bio in bios %}
         <div class="mentor">
             <div class="mentor-bak"
-                    style="background: url('/static/images/mentors/{{ bio.athena }}.jpg');
+                    style="background: url({{config.IMAGES_DIR}}'mentors/{{ bio.athena }}.jpg');
                     background-repeat:no-repeat;
                     background-position:center;">
                 <div class="mentor-bio">

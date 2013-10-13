@@ -1,5 +1,0 @@
-
-<!--            <img src="http://dummyimage.com/150x150/eee/000000.png"
-                 alt="{{ bio.first  ~ " " ~ bio.last }}"
-                 title="{{ bio.first  ~ " " ~ bio.last }}"/>
-             -->

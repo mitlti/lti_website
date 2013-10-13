@@ -19,7 +19,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="{{ url_for('static', filename=('stylesheets/' ~ link_)) }}"
+            href="{{ config.CSS_DIR ~ link_ }}"
         >
     {% endfor %}
 {%- endmacro %}
@@ -38,7 +38,7 @@
     {% for link_ in varargs %}
         <script
             type="text/javascript"
-            src="{{ url_for('static', filename=('javascripts/' ~ link_)) }}"
+            src="{{ config.JAVASCRIPTS_DIR ~ link_ }}"
         ></script>
     {% endfor %}
 {%- endmacro %}
@@ -46,11 +46,11 @@
 {% macro image_tag(link_, alt_text=none) -%}
     {% if alt_text %}
         <img
-            src="{{ url_for('static', filename=('images/' ~ link_)) }}"
+            src="{{ config.IMAGES_DIR ~ link_ }}"
             alt="{{ alt_text }}"
         >
     {% else %}
-        <img src="{{ url_for('static', filename=('images/' ~ link_)) }}">
+        <img src="{{ config.IMAGES_DIR ~ link_ }}">
     {% endif %}
 {%- endmacro %}
 
