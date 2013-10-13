@@ -1,3 +1,5 @@
+{% import 'macros.html' as html %}
+
 <h1>High school student?</h1>
 <h2>Why should you join?</h2>
 <ul>
@@ -12,8 +14,8 @@
 
 <h2>Expectations/Requirements</h2>
 <ul>
-    <li>9-12</li>
-    <li>Project</li>
+    <li>9th-12th Grades</li>
+    <li>You will have to create a service project over the course of the program</li>
     <li>HW, at most 2hrs per week, minimum 1hr</li>
     <li>Meet at MIT from 1-4 Sundays February-May</li>
 </ul>
@@ -26,14 +28,10 @@
 
 <h2>Application</h2>
 <p>
-Applications for the Spring 2013 session are currently closed. Check back in
-September for applications for the Spring 2014 year.
+    The applications are open!
+    {{ html.link(
+        "https://docs.google.com/forms/d/1s1w7Q-GyT9UrWg-fjY2368JHhB35DFji1tluSy-_S9g/viewform",
+        text="Apply Here")
+    }}
 </p>
 
-<p>
-For more information, click here (link to Program page)
-</p>
-
-<p>
-Apply Here
-</p>

@@ -9,7 +9,7 @@ sys.path.insert(0, os.path.join(lib_dir, 'flup-1.0.2'))
 
 ## !/usr/bin/python
 from flup.server.fcgi import WSGIServer
-import app
+from lti_website import app
 
 # ------
 class ScriptNameStripper(object):

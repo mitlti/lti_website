@@ -16,8 +16,6 @@ app.config.update(
     DEBUG=True,
 )
 
-print(app.config)
-
 ##### Import bios
 import csv
 from collections import namedtuple
