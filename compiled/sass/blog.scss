@@ -1,7 +1,7 @@
 @import "base";
 
 #top_image {
-    @include top_image("about.jpg");
+    @include top_image("blog.jpg", 0.7);
 }
 
 #content {
