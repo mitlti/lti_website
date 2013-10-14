@@ -12,9 +12,6 @@ from flask import render_template
 
 app = Flask(__name__, static_folder='static', template_folder='dynamic/templates')
 app.config.from_pyfile('config.py')
-app.config.update(
-    DEBUG=True,
-)
 
 ##### Import bios
 import csv
