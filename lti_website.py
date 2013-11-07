@@ -25,7 +25,7 @@ def read_bios():
     with open('bios.csv') as bios_csv:
         bios_reader = csv.DictReader(bios_csv)
         for bio_row in bios_reader:
-            bio_row = {k: unicode(v) for k, v in bio_row.iteritems()}
+            bio_row = dict((k, unicode(v)) for k, v in bio_row.iteritems())
             bio = Bio(**bio_row)
             bios.append(bio)
         return bios
