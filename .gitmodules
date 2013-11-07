@@ -4,9 +4,11 @@
 [submodule "lib/werkzeug"]
 	path = lib/werkzeug
 	url = https://github.com/mitsuhiko/werkzeug.git
+	ignore = dirty
 [submodule "lib/itsdangerous"]
 	path = lib/itsdangerous
 	url = https://github.com/mitsuhiko/itsdangerous.git
 [submodule "lib/jinja2"]
 	path = lib/jinja2
 	url = https://github.com/mitsuhiko/jinja2.git
+	ignore = dirty
