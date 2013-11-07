@@ -1,3 +1,4 @@
 assets/stylesheets
 lib/flup-1.0.2
 .rvmrc
+.sass-cache
